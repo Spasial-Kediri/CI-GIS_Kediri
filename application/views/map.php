@@ -1,85 +1,19 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        
-        <link rel="stylesheet" href="<?php echo base_url('qgis/css/leaflet.css') ?>" />
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url('qgis/css/qgis2web.css') ?>">
-        <link rel="stylesheet" href="<?php echo base_url('qgis/css/label.css') ?>" />
-        <link rel="stylesheet" href="<?php echo base_url('qgis/css/MarkerCluster.css') ?>" />
-        <link rel="stylesheet" href="<?php echo base_url('qgis/css/MarkerCluster.Default.css') ?>" />
-        
-        <script src="<?php echo base_url('qgis/js/leaflet.js')?>"></script>
-        <script src="<?php echo base_url('qgis/js/leaflet-heat.js')?>"></script>
-        <script src="<?php echo base_url('qgis/js/leaflet.rotatedMarker.js')?>"></script>
-        <script src="<?php echo base_url('qgis/js/OSMBuildings-Leaflet.js')?>"></script>
-        <script src="<?php echo base_url('qgis/js/leaflet-hash.js')?>"></script>
-        <script src="<?php echo base_url('qgis/js/label.js')?>"></script>
-        <script src="<?php echo base_url('qgis/js/Autolinker.min.js')?>"></script>
-        <script src="<?php echo base_url('qgis/js/leaflet.markercluster.js')?>"></script>
-        <style>
-        #map {
-            /*width: 1119px;*/
-            height: 600px;
-        }
-        table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    border: 2px solid black;
-}
-
-tbody, tr{ display: block; }
-
-tr:after {
-    content: ' ';
-    display: block;
-    visibility: hidden;
-    clear: both;
-}
-
-
-tbody {
-    height: 550px;
-  overflow-y: auto;
-  width: 100%;
-}
-
-
-tbody { border-top: 2px solid black; }
-
-tbody td {
-    width: 100%;
-    /*float: left;*/
-    /*border-right: 1px solid black;*/
-}
-
-tbody td:last-child {
-    border-right: none;
-}
-        </style>
-        <title></title>
-    </head>
-    <body>
+   
 <div class="row">
-					<div class="col-sm-12">
-						<div class="panel panel-default card-view">
-							<div class="panel-heading">
-								<div class="pull-left">
-									<h6 class="panel-title txt-dark">Peta Kediri</h6>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="panel-wrapper collapse in">
-								<div class="panel-body">
-									<div class="row">
-										<div class="col-sm-7">
-											<div id="map">
-											<script src="<?php echo base_url('qgis/data/json_Administrasi0.js') ?>"></script>
+    <div class="col-sm-12">
+    	<div class="panel panel-default card-view">
+    		<div class="panel-heading">
+    			<div class="pull-left">
+    				<h6 class="panel-title txt-dark">Peta Kediri</h6>
+    			</div>
+    			<div class="clearfix"></div>
+    		</div>
+    		<div class="panel-wrapper collapse in">
+    			<div class="panel-body">
+    				<div class="row">
+    					<div class="col-sm-7">
+    						<div id="map">
+    						<script src="<?php echo base_url('qgis/data/json_Administrasi0.js') ?>"></script>
         <script>
         
         // function toggleAppearance(){
@@ -97,12 +31,12 @@ tbody td:last-child {
 
             if (e.target.feature.geometry.type === 'LineString') {
               highlightLayer.setStyle({
-                color: '#ffff00',
+                color: 'red',
               });
             } else {
               highlightLayer.setStyle({
-                fillColor: '#ffff00',
-                fillOpacity: 1
+                fillColor: 'red',
+                fillOpacity: 5
               });
             }
         }
@@ -151,13 +85,13 @@ tbody td:last-child {
         	if(feature.properties['KECAMATAN']=='NGANCAR'){
         		layer.setStyle(styleKecNgancar(feature));
         	}
-        	// layer.on({
-         //        mouseout: function(e) {
-         //            layer.setStyle(doStyleAdministrasi0(feature));
+        	layer.on({
+                mouseover: function(e) {
+                    layer.setStyle(doStyleAdministrasi0(feature));
 
-         //        },
-         //        click: highlightFeature,
-         //    });
+                },
+                click: highlightFeature,
+            });
             layer.on('click', function(e) {
                 var dt = document.getElementById('data-table');
                 if(dt.style.visibility="hidden"){
@@ -167,7 +101,12 @@ tbody td:last-child {
                 if(ch.style.visibility == "hidden"){
             		ch.style.visibility = "visible";
             	}
-            	$( document ).ready(function() {
+
+                var ds = document.getElementById("desa");
+                if(ds.style.visibility == "hidden"){
+                    ds.style.visibility = "visible";
+                }
+        $( document ).ready(function() {
 		"use strict";
 		if( $('#chart_6').length > 0 ){
 		var pieChart;
@@ -185,7 +124,11 @@ tbody td:last-child {
 		],
 		datasets: [
 			{
-				data: [feature.properties['LUAS_PADI'], feature.properties['LUAS_JAGUN'], feature.properties['L_UBIKAYU'], feature.properties['L_UBIJALAR'], feature.properties['L_KTANAH']],
+				data: [feature.properties['LUAS_PADI'], 
+                feature.properties['LUAS_JAGUN'], 
+                feature.properties['L_UBIKAYU'], 
+                feature.properties['L_UBIJALAR'], 
+                feature.properties['L_KTANAH']],
 				// data: [100, 10, 4, 3, 2],
 				backgroundColor: [
 					"rgba(128,255,0,.8)",
@@ -230,6 +173,7 @@ tbody td:last-child {
                 // document.getElementById('data-id').innerHTML = feature.properties['OBJECTID']; 
                 // document.getElementById('data-iddesa').innerHTML = feature.properties['FID_IDDESA']; 
                 // document.getElementById('data-region').innerHTML = feature.properties['REGION']; 
+                document.getElementById('desa').innerHTML = feature.properties['DESA']; 
                 document.getElementById('data-desa').innerHTML = feature.properties['DESA']; 
                 document.getElementById('data-kecamatan').innerHTML = feature.properties['KECAMATAN']; 
                 document.getElementById('data-kabupaten').innerHTML = feature.properties['KABUPATEN']; 
@@ -272,7 +216,7 @@ tbody td:last-child {
         	return {
                 weight: 1.04,
                 color: '#000000',
-                fillColor: '#ffff00',
+                fillColor: '#d6cd68', // mouseover
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
@@ -347,7 +291,10 @@ tbody td:last-child {
                         <div class="panel panel-default card-view">
 							<div class="panel-heading">
 								<div class="pull-left">
-									<h6 class="panel-title txt-dark"><i class="icon-map mr-10"></i>Chart Distribusi</h6>
+									<h6 class="panel-title txt-dark"><i class="icon-map mr-10"></i>Chart Distribusi </h6>
+                                    <hr> 
+                                    <h5 id="desa" style="visibility: hidden;">' + (feature.properties['DESA'] !== null ? Autolinker.link(String(feature.properties['DESA'])) : '') + 
+            '</h5>
 								</div>
 								<div class="clearfix"></div>
 							</div>
@@ -360,21 +307,18 @@ tbody td:last-child {
 						</div>
 					</div>
 					<div class="col-lg-6">
-						<div class="panel panel-default card-view">
-							<div class="panel-heading">
-								<div class="pull-left">
-									<h6 class="panel-title txt-dark"><i class="icon-chart mr-10"></i>Grafik Luas Panen Tanaman Pangan (Hektar)</h6>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="panel-wrapper collapse in">
-								<div class="panel-body">
-									<div id="morris_bar_chart" class="morris-chart"></div>
-								</div>
-							</div>
-						</div>
+                        <div class="panel panel-default card-view">
+                            <div class="panel-heading">
+                                <div class="pull-left">
+                                    <h6 class="panel-title txt-dark"><i class="icon-chart mr-10"></i>Grafik Luas Panen Tanaman Pangan (Hektar)</h6>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="panel-wrapper collapse in">
+                                <div class="panel-body">
+                                    <div id="morris_bar_chart" class="morris-chart"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     </div>
-
-				</body>
-				</html>
