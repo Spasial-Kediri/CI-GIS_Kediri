@@ -9,4 +9,10 @@ class Home extends CI_Controller {
 		$this->load->view('map');
 		$this->load->view('footer');
 	}
+
+	public function view(){
+		$this->load->view('header');
+		$this->load->view('map2');
+		$this->load->view('footer');
+	}
 }

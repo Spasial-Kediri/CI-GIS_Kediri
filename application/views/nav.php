@@ -1,6 +1,6 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
 				<a id="toggle_nav_btn" class="toggle-left-nav-btn inline-block mr-20 pull-left" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
-				<a href="index.html"><img class="brand-img pull-left" src="<?php echo base_url() ;?>assets/dist/img/logo.png" alt="brand"/></a>
+				<a href="index.html"><img class="brand-img pull-left" src="<?php echo base_url() ;?>assets/img/logo.png" alt="brand"/></a>
 				<ul class="nav navbar-right top-nav pull-right">
 					<li>
 						<a href="javascript:void(0);" data-toggle="collapse" data-target="#site_navbar_search">
@@ -57,7 +57,7 @@
 					</li>
 
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="<?php echo base_url() ;?>assets/dist/img/user1.png" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>
+						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="<?php echo base_url() ;?>assets/img/user1.png" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>
 						<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
 							<li>
 								<a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>

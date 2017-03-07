@@ -13,11 +13,11 @@
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		
 		<!-- vector map CSS -->
-		<link href="<?php echo base_url() ;?>assets/vendors/bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		<link href="<?php echo base_url() ;?>vendors/bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css" rel="stylesheet" type="text/css"/>
 		
 		
 		<!-- Custom CSS -->
-		<link href="<?php echo base_url() ;?>assets/dist/css/style.css" rel="stylesheet" type="text/css">
+		<link href="<?php echo base_url() ;?>assets/css/style.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<!--Preloader-->
@@ -100,19 +100,19 @@
 		<!-- JavaScript -->
 		
 		<!-- jQuery -->
-		<script src="<?php echo base_url() ;?>assets/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="<?php echo base_url() ;?>vendors/bower_components/jquery/dist/jquery.min.js"></script>
 		
 		<!-- Bootstrap Core JavaScript -->
-		<script src="<?php echo base_url() ;?>assets/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="<?php echo base_url() ;?>assets/vendors/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
+		<script src="<?php echo base_url() ;?>vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="<?php echo base_url() ;?>vendors/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
 		
 		<!-- Slimscroll JavaScript -->
-		<script src="<?php echo base_url() ;?>assets/dist/js/jquery.slimscroll.js"></script>
+		<script src="<?php echo base_url() ;?>assets/js/jquery.slimscroll.js"></script>
 	
 	<!-- Fancy Dropdown JS -->
-	<script src="<?php echo base_url() ;?>assets/dist/js/dropdown-bootstrap-extended.js"></script>
+	<script src="<?php echo base_url() ;?>assets/js/dropdown-bootstrap-extended.js"></script>
 		
 		<!-- Init JavaScript -->
-		<script src="<?php echo base_url() ;?>assets/dist/js/init.js"></script>
+		<script src="<?php echo base_url() ;?>assets/js/init.js"></script>
 	</body>
 </html>

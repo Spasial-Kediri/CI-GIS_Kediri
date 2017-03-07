@@ -13,15 +13,15 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
 	<!-- Data table CSS -->
-	<link href="<?php echo base_url() ;?>assets/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+	<link href="<?php echo base_url() ;?>vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
 
 	<!-- Morris Charts CSS -->
-    <link href="<?php echo base_url() ;?>assets/vendors/bower_components/morris.js/morris.css" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo base_url() ;?>vendors/bower_components/morris.js/morris.css" rel="stylesheet" type="text/css"/>
 	
 	<!-- Custom CSS -->
-	<link href="<?php echo base_url() ;?>assets/dist/css/style.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url() ;?>assets/css/style.css" rel="stylesheet" type="text/css">
 
-	<link href="<?php echo base_url() ;?>assets/dist/css/custom.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url() ;?>assets/css/custom.css" rel="stylesheet" type="text/css">
 
 	<!-- qgis dependences -->
 	<link rel="stylesheet" href="<?php echo base_url('qgis/css/leaflet.css') ?>" />
