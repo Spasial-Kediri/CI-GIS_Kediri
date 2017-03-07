@@ -1,4 +1,4 @@
-   
+  
 <div class="row">
     <div class="col-sm-12">
     	<div class="panel panel-default card-view">
@@ -12,6 +12,74 @@
     			<div class="panel-body">
     				<div class="row">
     					<div class="col-sm-7">
+                        <!-- form -->
+                        <div class="form-wrap">
+                                <form action="#">
+                                    <div class="form-body">
+                                        <h6 class="txt-dark capitalize-font"><i class="icon-user mr-10"></i>Advanced Search</h6>
+                                        <hr>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                            <div class="form-group">
+                                                    <label class="control-label mb-10">Pilih</label>
+                                                    <select class="form-control">
+                                                        <option>--Pilih--</option>
+                                                        <option>Kabupaten</option>
+                                                        <option>Kecamatan</option>
+                                                        <option>Desa</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                            <div class="form-group">
+                                                    <label class="control-label mb-10">Kabupaten</label>
+                                                    <input type="text" class="form-control" placeholder="Kediri">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                            <div class="form-group">
+                                                    <label class="control-label mb-10">Kecamatan</label>
+                                                    <select class="form-control">
+                                                        <option>--Pilih Kecamatan--</option>
+                                                        <option>Jagung</option>
+                                                        <option>Padi</option>
+                                                        <option>Tebu</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                            <div class="form-group">
+                                                    <label class="control-label mb-10">Desa</label>
+                                                    <select class="form-control">
+                                                        <option>--Pilih Desa--</option>
+                                                        <option>Jagung</option>
+                                                        <option>Padi</option>
+                                                        <option>Tebu</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <!-- <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label mb-10">Gunakan Kata Kunci Untuk Mencari Data</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div> -->
+                                            <!--/span-->
+                                        </div>
+                                    </div>
+                                    <div class="form-actions mt-10">
+                                        <button type="submit" class="btn btn-success  mr-10"> Cari Sekarang</button>
+                                        <button type="button" class="btn btn-default">Batal</button>
+                                    </div>
+                                </form>
+                            </div>
+                        <!-- end of form -->
+                        <hr>
     						<div id="map">
     						<script src="<?php echo base_url('qgis/data/json_Administrasi0.js') ?>"></script>
         <script>
@@ -251,13 +319,15 @@
         </script>
 
        
-											</div>
-										</div>
-										<div class="col-sm-5">
-											<h2 id="namadesa">Desa : </h2>
-											<div id="data-table" style="visibility: hidden;" class="table-wrap">
-												<table class="table top-countries">
-													<tbody>
+        						</div>
+        					</div>
+
+
+		<div class="col-sm-5">
+			<h2 id="namadesa">Desa : </h2>
+			<div id="data-table" style="visibility: hidden;" class="table-wrap">
+				<table class="table top-countries">
+					<tbody>
 														<!-- <table class="table"> -->
 														<tr><td>Desa </td><td colspan="2" id="data-desa">' + (feature.properties['DESA'] !== null ? Autolinker.link(String(feature.properties['DESA'])) : '') + 
             '</td><td></td></tr><tr><td>Kecamatan </td><td colspan="2" id="data-kecamatan">' + (feature.properties['KECAMATAN'] !== null ? Autolinker.link(String(feature.properties['KECAMATAN'])) : '') + 
@@ -274,18 +344,23 @@
             '</td><td></td></tr>
             <!-- </table> -->
             <!-- </table> -->
-													</tbody>
-												</table>
-											</div>
-								
-										</div>
-									</div>
-								
-								</div>
+									</tbody>
+								</table>
 							</div>
+				
 						</div>
+
+                        
 					</div>
+				
 				</div>
+			</div>
+		</div>
+	</div>
+<!-- end row -->
+</div>
+
+
 				<div class="row">
 				<div class="col-lg-6">
                         <div class="panel panel-default card-view">

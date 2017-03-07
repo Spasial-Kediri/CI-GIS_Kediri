@@ -13,17 +13,55 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
 	<!-- Data table CSS -->
-	<link href="<?php echo base_url('vendors/bower_components/datatables/media/css/jquery.dataTables.min.css'); ?>"rel="stylesheet" type="text/css"/>
+	<link href="<?php echo base_url() ;?>vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+
+	<!-- Morris Charts CSS -->
+    <link href="<?php echo base_url() ;?>vendors/bower_components/morris.js/morris.css" rel="stylesheet" type="text/css"/>
 	
 	<!-- Custom CSS -->
-	<link href="<?php echo base_url('assets/css/style.css'); ?>" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url() ;?>assets/css/style.css" rel="stylesheet" type="text/css">
+
+	<link href="<?php echo base_url() ;?>assets/css/custom.css" rel="stylesheet" type="text/css">
+
+	<!-- qgis dependences -->
+	<link rel="stylesheet" href="<?php echo base_url('qgis/css/leaflet.css') ?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('qgis/css/qgis2web.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('qgis/css/label.css') ?>" />
+    <link rel="stylesheet" href="<?php echo base_url('qgis/css/MarkerCluster.css') ?>" />
+    <link rel="stylesheet" href="<?php echo base_url('qgis/css/MarkerCluster.Default.css') ?>" />
+    
+    <script src="<?php echo base_url('qgis/js/leaflet.js')?>"></script>
+    <script src="<?php echo base_url('qgis/js/leaflet-heat.js')?>"></script>
+    <script src="<?php echo base_url('qgis/js/leaflet.rotatedMarker.js')?>"></script>
+    <script src="<?php echo base_url('qgis/js/OSMBuildings-Leaflet.js')?>"></script>
+    <script src="<?php echo base_url('qgis/js/leaflet-hash.js')?>"></script>
+    <script src="<?php echo base_url('qgis/js/label.js')?>"></script>
+    <script src="<?php echo base_url('qgis/js/Autolinker.min.js')?>"></script>
+    <script src="<?php echo base_url('qgis/js/leaflet.markercluster.js')?>"></script>
 </head>
 
 <body>
-<div class="page-wrapper">
-            <div class="container-fluid">
+	<!--Preloader-->
+	<div class="preloader-it">
+		<div class="la-anim-1"></div>
+	</div>
+	<!--/Preloader-->
+    <div class="wrapper">
 
-	<!-- Title -->
+        <!-- Top Menu Items -->
+		<?php $this->load->view('nav') ;?>	
+		<!-- /Top Menu Items -->
+			
+		<!-- Left Sidebar Menu -->
+		<?php $this->load->view('menu') ;?>
+		<!-- /Left Sidebar Menu -->
+	
+	
+	<!-- Main Content -->
+	<div class="page-wrapper">
+            <div class="container-fluid">
+				
+				<!-- Title -->
 				<div class="row heading-bg  bg-blue">
 					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
 						<h5 class="txt-light">Information System of Kediri</h5>
@@ -39,20 +77,3 @@
 					<!-- /Breadcrumb -->
 				</div>
 				<!-- /Title -->
-			<script src="<?php echo base_url('vendors/bower_components/jquery/dist/jquery.min.js') ?>"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="<?php echo base_url('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') ?>"></script>
-    
-	<!-- Data table JavaScript -->
-	<script src="<?php echo base_url('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') ?>"></script>
-	<script src="<?php echo base_url('assets/js/dataTables-data.js') ?>"></script>
-	<!-- Slimscroll JavaScript -->
-	<script src="<?php echo base_url('assets/js/jquery.slimscroll.js')?>"></script>
-	
-	<!-- Fancy Dropdown JS -->
-	<script src="<?php echo base_url('assets/js/dropdown-bootstrap-extended.js') ?>"></script>
-	<!-- Init JavaScript -->
-	<script src="<?php echo base_url('assets/js/init.js') ?>"></script>
-			</body>
-			</html>
